@@ -8,7 +8,7 @@
 #------------------------------------------------------
 
 # VARIABLES
-NAME = WEBAPP_VAGRANT
+NAME = WEBAPP_AUTOMATEDVAGRANT
 #------------------------------------------------------
 help: ## GUIA DE USO
 	@echo 'Inicializar Entorno usar init'
@@ -20,8 +20,7 @@ help: ## GUIA DE USO
 init: ## INICIACION DE ENTORNO
 	@echo 'Inicializar de entorno $(NAME)'
 	vagrant init
-
-
+	
 #------------------------------------------------------
 status: ## ESTATUS Y VERIFICACION DE ENTORNO
 	@echo 'Estatus de entorno $(NAME)'
@@ -37,5 +36,4 @@ build: ## CREACION DE ENTORNO VAGRANT
 destroy: ## DESTRUCCION DE ENTORNO VAGRANT
 	@echo 'Destruccion de Entorno $(NAME)'
 	vagrant destroy
-	@echo 'Verificacion de Estatus $(NAME)'
 	vagrant status
