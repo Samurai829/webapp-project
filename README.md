@@ -1,5 +1,7 @@
 # PROYECTO WEB APP LOCAL MACHINE
+Este es un proyecto donde uso Vagrant para aprovisionar varias VM con NGINX, Rabbitmq, Memcached, MySql y Tomcat para poder alojar una APP.
 
+En este proyecto implemento 2 metodos para su realizacion.
 ## PREPARACION DEL ENTORNO:
 **PREREQUISITOS DE PROYECTO** 
 Debemos tener instalador lo siguiente:
