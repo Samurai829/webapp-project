@@ -64,10 +64,10 @@ CONFIGURAMOS EL ENTORNO MYSQL.
  `exit`
 
 DESCARGAMOS EL CODIGO Y INICIALIZAMOS LA BASE DE DATOS.
-`git clone -b main https://github.com/Samurai829/local_webapp.git`
+`git clone -b main https://github.com/Samurai829/webapp-project.git`
 
 Accedemos al directorio del REPOSITORIO.
-`cd local_webapp`
+`cd webapp-project`
 
 Inicializamos el BACKUP.
 `mysql -u root -padmin123 accounts < src/main/resources/db_backup.sql`
@@ -222,10 +222,10 @@ Iniciamos el FIREWALL y el permiso de acceso a Tomcat al PUERTO 8080.
 
 Creamos el Codigo y desplegamos (app01)
 Descargamos el codigo fuente:
-`git clone -b main https://github.com/Samurai829/local_webapp.git`
+`git clone -b main https://github.com/Samurai829/webapp-project.git`
 
 Actualizamos la configuracion.
-`cd local_webapp`
+`cd webapp-project`
 `vim src/main/resources/application.properties`
 
 Corremos el comando dentro del directorio del repositorio.
@@ -233,7 +233,7 @@ Corremos el comando dentro del directorio del repositorio.
 
 `systemctl stop tomcat`
 `rm -rf /usr/local/tomcat/webapps/ROOT*`
-`cp target/local_webapp.war /usr/local/tomcat/webapps/ROOT.war`
+`cp target/webapp-project.war /usr/local/tomcat/webapps/ROOT.war`
 `systemctl start tomcat`
 `chown tomcat.tomcat /usr/local/tomcat/webapps -R`
 `systemctl restart tomcat`
@@ -257,13 +257,13 @@ Creamos el fichero de configuracion de Nginx.
 `vi /etc/nginx/sites-available/vproapp`
 
 Actualizamos el contenido del fichero:
-                upstream webapp {
+                upstream vproapp {
                 server app01:8080;
                 }
                 server {
                 listen 80;
                 location / {
-                proxy_pass http://webapp;
+                proxy_pass http://vproapp
                 }
                 }
 
@@ -271,7 +271,7 @@ Remueve el fichero de configuracion por defecto de Nginx:
 `rm -rf /etc/nginx/sites-enabled/default`
 
 Creamos la activacion.
-`ln -s /etc/nginx/sites-available/webapp /etc/nginx/sites-enabled/webapp`
+`ln -s /etc/nginx/sites-available/webapp /etc/nginx/sites-enabled/vproapp`
 
 Reiniciamos Nginx
 `systemctl restart nginx`
