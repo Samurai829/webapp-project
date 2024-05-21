@@ -46,16 +46,16 @@ systemctl daemon-reload
 systemctl start tomcat
 systemctl enable tomcat
 
-git clone -b main https://github.com/Samurai829/local_webapp.git
-cd local_webapp
+git clone -b main https://github.com/Samurai829/webapp-project.git
+cd webapp-project
 mvn install
 systemctl stop tomcat
 sleep 20
 rm -rf /usr/local/tomcat/webapps/ROOT*
-cp target/local_webapp.war /usr/local/tomcat/webapps/ROOT.war
+cp target/webapp-project.war /usr/local/tomcat/webapps/ROOT.war
 systemctl start tomcat
 sleep 20
 systemctl stop firewalld
 systemctl disable firewalld
-#cp /vagrant/application.properties /usr/local/tomcat/webapps/ROOT/WEB-INF/classes/application.properties
+#cp /vagrant/automated/application.properties /usr/local/tomcat/webapps/ROOT/WEB-INF/classes/application.properties
 systemctl restart tomcat
