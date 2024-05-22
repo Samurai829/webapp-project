@@ -233,7 +233,7 @@ Corremos el comando dentro del directorio del repositorio.
 
 `systemctl stop tomcat`
 `rm -rf /usr/local/tomcat/webapps/ROOT*`
-`cp target/webapp-project.war /usr/local/tomcat/webapps/ROOT.war`
+`cp target/vprofile-v2.war /usr/local/tomcat/webapps/ROOT.war`
 `systemctl start tomcat`
 `chown tomcat.tomcat /usr/local/tomcat/webapps -R`
 `systemctl restart tomcat`

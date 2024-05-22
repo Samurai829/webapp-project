@@ -6,6 +6,10 @@ En este proyecto implemento 2 metodos para su realizacion, el primero es la conf
 cada una de las VM que alojan los servicios necesarios para una APP de Java y en la Segunda esta el proceso automatizado 
 de configuracion del entorno VM creado como base del proyecto.
 
+**APP USADA EN EL PROYECTO**
+En este proyecto utilizo la APP del repositorio de ![devopshydclub](https://github.com/devopshydclub/vprofile-project) aqui 
+tiene el codigo de la App.
+
 ## PREPARACION DEL ENTORNO 💻
 **PREREQUISITOS DE PROYECTO** 
 Debemos tener instalador lo siguiente:
