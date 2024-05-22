@@ -52,7 +52,7 @@ mvn install
 systemctl stop tomcat
 sleep 20
 rm -rf /usr/local/tomcat/webapps/ROOT*
-cp target/webapp-project.war /usr/local/tomcat/webapps/ROOT.war
+cp target/vprofile-v2.war /usr/local/tomcat/webapps/ROOT.war
 systemctl start tomcat
 sleep 20
 systemctl stop firewalld
